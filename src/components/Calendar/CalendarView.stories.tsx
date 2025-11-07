@@ -20,12 +20,18 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     events: sampleEvents,
+    onEventAdd: () => {},
+    onEventUpdate: () => {},
+    onEventDelete: () => {},
   },
 };
 
 export const Empty: Story = {
   args: {
     events: [],
+    onEventAdd: () => {},
+    onEventUpdate: () => {},
+    onEventDelete: () => {},
   },
 };
 
@@ -33,18 +39,27 @@ export const WeekView: Story = {
   args: {
     events: sampleEvents,
     initialView: 'week',
+    onEventAdd: () => {},
+    onEventUpdate: () => {},
+    onEventDelete: () => {},
   },
 };
 
 export const WithManyEvents: Story = {
   args: {
     events: [...sampleEvents, /* duplicate or add more for 20+ */],
+    onEventAdd: () => {},
+    onEventUpdate: () => {},
+    onEventDelete: () => {},
   },
 };
 
 export const InteractiveDemo: Story = {
   args: {
     events: sampleEvents,
+    onEventAdd: () => {},
+    onEventUpdate: () => {},
+    onEventDelete: () => {},
   },
 };
 
@@ -56,6 +71,9 @@ export const MobileView: Story = {
   },
   args: {
     events: sampleEvents,
+    onEventAdd: () => {},
+    onEventUpdate: () => {},
+    onEventDelete: () => {},
   },
 };
 
@@ -65,6 +83,9 @@ export const DarkMode: Story = {
   },
   args: {
     events: sampleEvents,
+    onEventAdd: () => {},
+    onEventUpdate: () => {},
+    onEventDelete: () => {},
   },
   // Simulate dark mode by setting theme in store or wrapper
 };
