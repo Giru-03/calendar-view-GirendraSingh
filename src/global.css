@@ -1,0 +1,91 @@
+:root {
+  /* Colors (from your previous tailwind config) */
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f4f4f5;
+  --color-neutral-200: #e4e4e7;
+  --color-neutral-300: #d4d4d8;
+  --color-neutral-400: #a1a1aa;
+  --color-neutral-500: #71717a;
+  --color-neutral-600: #52525b;
+  --color-neutral-700: #3f3f46;
+  --color-neutral-800: #27272a;
+  --color-neutral-900: #18181b;
+
+  --shadow-card: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1);
+  --shadow-card-hover: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  --shadow-modal: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+
+  --radius-xl: 0.75rem;
+  --radius-4xl: 2rem;
+}
+
+/* Basic page/layout */
+html, body, #root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: var(--color-neutral-900);
+  color: white;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.app-inner {
+  max-width: 48rem;
+  width: 100%;
+}
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.logo-row { display:flex; gap:0.75rem; align-items:center; }
+.logo { width:32px; height:32px; border-radius:6px; }
+
+.example-card {
+  background: var(--color-neutral-800);
+  padding: 1.25rem;
+  border-radius: var(--radius-4xl);
+  box-shadow: var(--shadow-card);
+}
+.example-card h2 { margin: 0 0 0.5rem 0; }
+.controls { display:flex; gap:1rem; align-items:center; }
+
+.btn { padding: 0.5rem 1rem; border-radius: var(--radius-xl); border: 1px solid transparent; cursor: pointer; }
+.btn-primary { background: var(--color-primary-500); color: white; border-color: transparent; }
+.btn-primary:hover { background: var(--color-primary-600); box-shadow: var(--shadow-card-hover); }
+
+.note { color: var(--color-neutral-300); font-size: 0.9rem; }
+.note-muted { color: var(--color-neutral-500); font-size: 0.9rem; margin-top: 1rem; }
+
+/* Calendar component classes */
+.calendar-root { background: white; color: initial; border-radius: var(--radius-xl); box-shadow: var(--shadow-card); padding: 1rem; }
+.calendar-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; }
+.calendar-month { display:grid; grid-template-columns: repeat(7, 1fr); gap:0; }
+.calendar-day { text-align:center; font-weight:600; color:var(--color-neutral-500); padding:0.5rem 0; border-bottom:1px solid #eee; }
+.calendar-cell { border:1px solid #e6e6e6; height:8rem; padding:0.5rem; cursor:pointer; }
+.calendar-cell.outside { color: var(--color-neutral-400); background: #fafafa; }
+.calendar-cell .date { font-size:0.875rem; font-weight:600; }
+.calendar-event { font-size:0.75rem; padding:0.125rem 0.5rem; border-radius:0.25rem; color:white; display:block; margin-bottom:0.25rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+/* Small helpers used in week view */
+.week-grid { overflow:auto; }
